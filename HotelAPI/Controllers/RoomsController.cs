@@ -86,6 +86,11 @@ namespace Hotel.Controllers
                 return BadRequest(ModelState);
             }
 
+            if (RoomExists(room.Id))
+            {
+                return BadRequest();
+            }
+
             db.Rooms.Add(room);
             await db.SaveChangesAsync();
 

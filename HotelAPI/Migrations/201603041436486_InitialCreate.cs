@@ -34,25 +34,25 @@ namespace Hotel.Migrations
                 "dbo.Rooms",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        RoomNumber = c.Int(nullable: false, identity: true),
                         NumPersons = c.Int(nullable: false),
                         MinPrice = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.RoomNumber);
             
             CreateTable(
                 "dbo.AlternatePrices",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        RoomId = c.Int(nullable: false),
+                        RoomNumber = c.Int(nullable: false),
                         StartTime = c.DateTime(nullable: false),
                         EndTime = c.DateTime(nullable: false),
                         NewPrice = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Rooms", t => t.RoomId, cascadeDelete: true)
-                .Index(t => t.RoomId);
+                .ForeignKey("dbo.Rooms", t => t.RoomNumber, cascadeDelete: true)
+                .Index(t => t.RoomNumber);
             
             CreateTable(
                 "dbo.AspNetUsers",
@@ -106,12 +106,12 @@ namespace Hotel.Migrations
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
-            DropForeignKey("dbo.AlternatePrices", "RoomId", "dbo.Rooms");
+            DropForeignKey("dbo.AlternatePrices", "RoomNumber", "dbo.Rooms");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
-            DropIndex("dbo.AlternatePrices", new[] { "RoomId" });
+            DropIndex("dbo.AlternatePrices", new[] { "RoomNumber" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");

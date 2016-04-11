@@ -213,6 +213,7 @@
     <Compile Include="Controllers\PeopleController.cs" />
     <Compile Include="Controllers\ReservationsController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
+    <Compile Include="Controllers\RoomsViewController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -224,6 +225,14 @@
     <Compile Include="Migrations\201603041921099_SetupBaseModels.cs" />
     <Compile Include="Migrations\201603041921099_SetupBaseModels.Designer.cs">
       <DependentUpon>201603041921099_SetupBaseModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603071212477_test.cs" />
+    <Compile Include="Migrations\201603071212477_test.Designer.cs">
+      <DependentUpon>201603071212477_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603071450099_SetupBaseModels1.cs" />
+    <Compile Include="Migrations\201603071450099_SetupBaseModels1.Designer.cs">
+      <DependentUpon>201603071450099_SetupBaseModels1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -247,6 +256,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\AjaxFunctions.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -272,6 +282,8 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -296,6 +308,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\RoomsView\New.cshtml" />
+    <Content Include="Views\RoomsView\Delete.cshtml" />
+    <Content Include="Views\RoomsView\Details.cshtml" />
+    <Content Include="Views\RoomsView\Edit.cshtml" />
+    <Content Include="Views\RoomsView\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -314,6 +331,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201603041921099_SetupBaseModels.resx">
       <DependentUpon>201603041921099_SetupBaseModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603071212477_test.resx">
+      <DependentUpon>201603071212477_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603071450099_SetupBaseModels1.resx">
+      <DependentUpon>201603071450099_SetupBaseModels1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

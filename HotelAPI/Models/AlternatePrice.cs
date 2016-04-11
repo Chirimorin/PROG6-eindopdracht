@@ -11,7 +11,7 @@ namespace Hotel.Models
         public int Id { get; set; }
 
         [Required]
-        public int RoomId { get; set; }
+        public int RoomNumber { get; set; }
         public Room Room { get; set; }
 
         [Required]
@@ -19,6 +19,7 @@ namespace Hotel.Models
         [Required]
         public DateTime EndTime { get; set; }
         [Required]
-        public int NewPrice { get; set; }
+        [DataType(DataType.Currency)]
+        public decimal NewPrice { get; set; }
     }
 }

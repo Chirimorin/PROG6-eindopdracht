@@ -16,7 +16,7 @@ namespace Hotel.Models
         public Address Address { get; set; }
 
         [Required]
-        public int RoomId { get; set; }
+        public int RoomNumber { get; set; }
         public Room Room { get; set; }
 
         [Required]

@@ -11,11 +11,14 @@ namespace Hotel.Models
     {
         public int Id { get; set; }
         [Required]
+        public int RoomNumber { get; set; }
+        [Required]
         public int NumPersons { get; set; }
 
         // Price in cents (to prevent issues with rounding)
         [Required]
-        public int MinPrice { get; set; }
+        [DataType(DataType.Currency)]
+        public decimal MinPrice { get; set; }
 
         public List<AlternatePrice> AlternatePrices { get; set; }
     }

@@ -45,15 +45,15 @@ namespace Hotel.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         AddressId = c.Int(nullable: false),
-                        RoomId = c.Int(nullable: false),
+                        RoomNumber = c.Int(nullable: false),
                         StartDate = c.DateTime(nullable: false),
                         EndDate = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Addresses", t => t.AddressId)
-                .ForeignKey("dbo.Rooms", t => t.RoomId)
+                .ForeignKey("dbo.Rooms", t => t.RoomNumber)
                 .Index(t => t.AddressId)
-                .Index(t => t.RoomId);
+                .Index(t => t.RoomNumber);
             
             CreateTable(
                 "dbo.People",
@@ -80,7 +80,7 @@ namespace Hotel.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.Confirmations", "ReservationId", "dbo.Reservations");
-            DropForeignKey("dbo.Reservations", "RoomId", "dbo.Rooms");
+            DropForeignKey("dbo.Reservations", "RoomNumber", "dbo.Rooms");
             DropForeignKey("dbo.People", "Reservation_Id", "dbo.Reservations");
             DropForeignKey("dbo.People", "User_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.Reservations", "AddressId", "dbo.Addresses");
@@ -88,7 +88,7 @@ namespace Hotel.Migrations
             DropForeignKey("dbo.Addresses", "User_Id", "dbo.AspNetUsers");
             DropIndex("dbo.People", new[] { "Reservation_Id" });
             DropIndex("dbo.People", new[] { "User_Id" });
-            DropIndex("dbo.Reservations", new[] { "RoomId" });
+            DropIndex("dbo.Reservations", new[] { "RoomNumber" });
             DropIndex("dbo.Reservations", new[] { "AddressId" });
             DropIndex("dbo.Confirmations", new[] { "AddressId" });
             DropIndex("dbo.Confirmations", new[] { "ReservationId" });
